@@ -1,11 +1,12 @@
 import { useCheckouStore } from "@/stores/checkout-store";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { generateMessage } from "@/lib/generate-message";
 
 export const StepFinish = () => {
   const { name } = useCheckouStore((state) => state);
 
-  const message = "Oi";
+  const message = generateMessage();
   const linkZap = `${process.env.NEXT_PUBLIC_ZAP}`;
   return (
     <div className="text-center flex flex-col gap-5">
