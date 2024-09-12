@@ -7,7 +7,7 @@ export const StepFinish = () => {
   const { name } = useCheckouStore((state) => state);
 
   const message = generateMessage();
-  const linkZap = `${process.env.NEXT_PUBLIC_ZAP}`;
+  const linkZap = `${process.env.NEXT_PUBLIC_ZAP}?text${encodeURI(message)}`;
   return (
     <div className="text-center flex flex-col gap-5">
       <p>
